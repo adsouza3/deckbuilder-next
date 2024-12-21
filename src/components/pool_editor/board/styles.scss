@@ -1,0 +1,191 @@
+// TODO more flexible
+$outer-height: 240px;
+$outer-width: 150px;
+$img-offset-y: -13px;
+$img-offset-x: -5px;
+
+$uncommon-outline-color: rgb(157, 234, 136);
+$rare-outline-color: rgb(160, 243, 253);
+$legendary-outline-color: rgb(235, 197, 91);
+
+.card-wrapper {
+  position: absolute;
+  height: $outer-height;
+  width: $outer-width;
+  user-select: none;
+
+  &.card-static {
+    position: relative;
+  }
+
+  .card-content {
+    position: relative;
+
+    img {
+      pointer-events: none;
+      position: absolute;
+      top: $img-offset-y;
+      left: $img-offset-x;
+    }
+
+    .true-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: calc(#{$outer-height + $img-offset-y});
+      width: calc(#{$outer-width + $img-offset-x});
+      border-bottom-right-radius: 65px 35px;
+      border-bottom-left-radius: 65px 35px;
+      border-top-left-radius: 35px 30px;
+      border-top-right-radius: 35px 30px;
+
+      &.selected.highlighted {
+        border: 3px solid yellow;
+        outline: 3px solid orange;
+      }
+
+      &.selected {
+        border: 3px solid yellow;
+      }
+
+      &.highlighted {
+        border: 3px solid orange;
+      }
+
+      &.legendary-outline {
+        border: 3px solid $legendary-outline-color;
+      }
+
+      &.selected.legendary-outline {
+        border: 3px solid yellow;
+        outline: 3px solid $legendary-outline-color;
+      }
+
+      &.rare-outline {
+        border: 3px solid $rare-outline-color;
+      }
+
+      &.selected.rare-outline {
+        border: 3px solid yellow;
+        outline: 3px solid $rare-outline-color;
+      }
+
+      &.uncommon-outline {
+        border: 3px solid $uncommon-outline-color;
+      }
+
+      &.selected.uncommon-outline {
+        border: 3px solid yellow;
+        outline: 3px solid $uncommon-outline-color;
+      }
+    }
+  }
+}
+
+.card-stack {
+  pointer-events: none;
+  position: absolute;
+  height: calc(#{$outer-height + $img-offset-y});
+  width: calc(#{$outer-width + $img-offset-x});
+
+  &.empty {
+    border: 3px solid black;
+  }
+}
+
+.market-board {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.focus-modal {
+  .modal-content {
+    background: transparent;
+  }
+
+  .modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dependency-card-img {
+    height: 300px;
+  }
+
+  .focused-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: yellow;
+    font-size: 20px;
+  }
+
+  .focused-card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
+
+  .focused-card-abilities {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: white;
+    border: solid black 1px;
+    border-radius: 5px;
+    padding: 1rem;
+
+    div {
+      margin-top: .5rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .focused-card-dependencies {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.info-modal {
+  width: 85vw !important;
+  max-width: 85vw !important;
+  height: 85vh !important;
+  max-height: 85vh !important;
+
+  p {
+    text-align: center;
+    white-space: pre-wrap;
+  }
+
+  .donate-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .coffee-button {
+      height: 50px;
+    }
+  }
+}
+
+.previous-market {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  margin-left: .5rem;
+  top: 0;
+  left: 0;
+  background-color: #00AA11;
+
+  .previous-market-card-img {
+    height: 150px;
+  }
+}

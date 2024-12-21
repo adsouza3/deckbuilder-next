@@ -1,0 +1,14 @@
+
+.consistency-modal {
+  display: flex;
+  justify-content: space-between;
+
+  .histogram {
+    flex-grow: 1;
+  }
+
+  .consistency-controls {
+    justify-content: center;
+    margin-left: 2rem;
+  }
+}

@@ -1,0 +1,88 @@
+.stats-modal {
+  width: 85vw !important;
+  max-width: 85vw !important;
+  height: 85vh !important;
+  max-height: 85vh !important;
+}
+
+.filter-button {
+  min-width: 25px;
+  padding: 3px !important;
+}
+
+.clear-filters, .filter-search {
+  margin-top: 1rem;
+}
+
+.sorting-buttons-container, .grouping-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.settings-icon {
+  height: 28px;
+  width: 28px;
+
+  &.legendary {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  &.common, &.uncommon, &.rare {
+    clip-path: polygon(
+      100% 75%,
+      0% 75%,
+      1.7% 62.1%,
+      6.7% 50%,
+      14.6% 39.6%,
+      25% 31.7%,
+      37.1% 26.7%,
+      50% 25%,
+      62.9% 26.7%,
+      75% 31.7%,
+      85.4% 39.6%,
+      96.3% 60%,
+      98.3% 62.1%
+    );
+  }
+
+  &.none {
+    clip-path: circle(43%);
+  }
+}
+
+.sigil-counter {
+  display: flex;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  button {
+    margin-right: 0 !important;
+  }
+
+  .sigil-label {
+    margin-right: 1rem;
+  }
+
+  .sigil-count-label {
+    padding-top: 1px;
+    width: 15px;
+    text-align: center;
+  }
+}
+
+.deck-summary {
+  .deck-summary-row {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.user-filter-input {
+  margin-top: .5rem;
+}
